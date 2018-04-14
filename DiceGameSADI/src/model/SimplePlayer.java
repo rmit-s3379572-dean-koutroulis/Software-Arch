@@ -4,27 +4,36 @@ import model.interfaces.DicePair;
 import model.interfaces.Player;
 
 public class SimplePlayer implements Player {
+	
+	private static int maxPlayerID = 0;
 
-	public SimplePlayer(String string, String string2, int i) {
+	private String playerId;
+	private String playerName;
+	private int points;
+	private int bet;
+	private int rollResult;
+	
+	public SimplePlayer(String playerId, String playerName, int initialPoints) {
 		// TODO Auto-generated constructor stub
+		this.playerId = Integer.toString(maxPlayerID++);
 	}
 
 	@Override
 	public String getPlayerName() {
 		// TODO Auto-generated method stub
-		return null;
+		return playerName;
 	}
 
 	@Override
 	public void setPlayerName(String playerName) {
 		// TODO Auto-generated method stub
-
+		
 	}
 
 	@Override
 	public int getPoints() {
 		// TODO Auto-generated method stub
-		return 0;
+		return points;
 	}
 
 	@Override
@@ -36,25 +45,32 @@ public class SimplePlayer implements Player {
 	@Override
 	public String getPlayerId() {
 		// TODO Auto-generated method stub
-		return null;
+		return playerId;
 	}
 
 	@Override
 	public boolean placeBet(int bet) {
 		// TODO Auto-generated method stub
-		return false;
+		if 
+		(bet > getPoints())
+			
+			return false;
+		
+		
+			return true;
+		
 	}
 
 	@Override
 	public int getBet() {
 		// TODO Auto-generated method stub
-		return 0;
+		return bet;
 	}
 
 	@Override
 	public DicePair getRollResult() {
-		// TODO Auto-generated method stub
 		return null;
+		// TODO Auto-generated method stub
 	}
 
 	@Override
