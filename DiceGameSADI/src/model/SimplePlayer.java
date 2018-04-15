@@ -5,9 +5,9 @@ import model.interfaces.Player;
 
 public class SimplePlayer implements Player {
 	
-	private static int maxPlayerID = 0;
+	private static int maxid = 0;
 
-	private String playerId;
+	private String id;
 	private String playerName;
 	private int points;
 	private int bet;
@@ -15,7 +15,7 @@ public class SimplePlayer implements Player {
 	
 	public SimplePlayer(String playerId, String playerName, int initialPoints) {
 		// TODO Auto-generated constructor stub
-		this.playerId = Integer.toString(maxPlayerID++);
+		this.id = Integer.toString(maxid++);
 	}
 
 	@Override
@@ -45,17 +45,16 @@ public class SimplePlayer implements Player {
 	@Override
 	public String getPlayerId() {
 		// TODO Auto-generated method stub
-		return playerId;
+		return id;
 	}
 
 	@Override
 	public boolean placeBet(int bet) {
-		// TODO Auto-generated method stub
 		if 
 		(bet > getPoints())
 			
 			return false;
-		
+	
 		
 			return true;
 		
@@ -63,20 +62,25 @@ public class SimplePlayer implements Player {
 
 	@Override
 	public int getBet() {
-		// TODO Auto-generated method stub
+		
 		return bet;
 	}
 
 	@Override
 	public DicePair getRollResult() {
+	//	rollResult = dice1 + dice2;
 		return null;
-		// TODO Auto-generated method stub
 	}
 
 	@Override
 	public void setRollResult(DicePair rollResult) {
-		// TODO Auto-generated method stub
+		
 
+	}	
+	public String toString()
+	{
+		return String.format("INFO: Player: id= s, name= s,"
+				+ " points= s", id, playerName, points);
 	}
 
 }
